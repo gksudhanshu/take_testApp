@@ -7,12 +7,16 @@ export class MainController {
   newThing = '';
 
   /*@ngInject*/
-  constructor($http, $scope, Auth, socket) {
+  constructor($http,$state, $scope, Auth, socket) {
     this.$http = $http;
     this.Auth = Auth;
     this.$scope=$scope;
     this.socket = socket;
     $scope.getCurrentUser = Auth.getCurrentUserSync;
+    console.log($scope.getCurrentUser().role)
+    if($scope.getCurrentUser().role==='admin'){
+      $state.go('admin')
+    }
 
 
   }

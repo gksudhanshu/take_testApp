@@ -15,11 +15,11 @@ export class TaketestComponent {
     this.currentUser = {};
     $scope.answers = {};
     $scope.correctCount = 0;
-    /**
-     * calculating result
-     */
     $scope.isSubmitted=false;
-    $scope.showResult = function () {
+    /**
+     * calculating result and submit
+     */
+    $scope.SubmitTest = function () {
       $scope.correctCount = 0;
       $scope.isSubmitted=true;
       var qLength = $scope.questions.length;

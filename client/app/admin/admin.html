@@ -1,12 +1,39 @@
 <div class="container">
-  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
-  <ul class="list-group user-list">
+ <h3>User Score: </h3>
+ <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>User</th>
+        <th>Score</th>
+       
+      </tr>
+    </thead>
+    <tbody ng-repeat="user in users">
+      <tr>
+        <td>{{user.Email}}</td>
+        <td>{{user.Name}}</td>
+        <td>{{user.NoOfCorrectAnswer}}/{{user.QuestionNumber.length}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <!-- <ul class="list-group user-list">
+      <li class="list-group-item">
+          <div class="user-info">
+              <strong>User</strong><br>
+          </div>
+          <div class="user-info">
+              <strong>Score</strong><br>
+          </div>
+            
+        </li>
     <li class="list-group-item" ng-repeat="user in admin.users">
 	    <div class="user-info">
 	        <strong>{{user.name}}</strong><br>
 	        <span class="text-muted">{{user.email}}</span>
 	    </div>
-        <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+      <strong>4</strong>
     </li>
-  </ul>
+  </ul> -->
 </div>

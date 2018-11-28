@@ -1,5 +1,5 @@
-<div>
-  <ul ng-if="!isSubmitted" ng-repeat="question in questions">
+<div class="container">
+  <ul ng-If="!isSubmitted" ng-repeat="question in questions">
     <strong class="question">{{$index+1}}. {{ question.Question }}</strong>
     <ul id="quest_{{$parent.$index}}">
         <div ng-repeat=" answer in question.Options">
@@ -11,9 +11,9 @@
   </ul>
 </ul>
 
-<button class="btn btn-primary" ng-If="!notAuthorized && !isSubmitted" type="submit" ng:click="showResult()">Submit</button>
+<button class="btn btn-danger pull-right" ng-If="!notAuthorized && !isSubmitted" type="submit" ng:click="SubmitTest()">Submit Test</button>
 <div  ng-If="!notAuthorized && isSubmitted" class="well">
-    <h1>Your Score</h1>
+    <h1>Your Score: </h1>
   <p>You got {{ correctCount }} right out of {{questions.length}} </p>
 
 </div>
