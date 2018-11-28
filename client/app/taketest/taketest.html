@@ -1,0 +1,24 @@
+<div>
+  <ul ng-if="!isSubmitted" ng-repeat="question in questions">
+    <strong class="question">{{$index+1}}. {{ question.Question }}</strong>
+    <ul id="quest_{{$parent.$index}}">
+        <div ng-repeat=" answer in question.Options">
+      <label for="quest_{{$parent.$index}}_answer_{{$index}}">
+        <input type="radio" id="quest_{{$parent.$index}}_answer_{{$index}}"
+         ng-model="answers[$parent.$index]" value="{{ answer.Name }}"
+          name="quest_{{$parent.$index}}_answers" />{{ answer.Name }}</label>
+  </div>
+  </ul>
+</ul>
+
+<button class="btn btn-primary" ng-If="!notAuthorized && !isSubmitted" type="submit" ng:click="showResult()">Submit</button>
+<div  ng-If="!notAuthorized && isSubmitted" class="well">
+    <h1>Your Score</h1>
+  <p>You got {{ correctCount }} right out of {{questions.length}} </p>
+
+</div>
+<div ng-If="notAuthorized" class="well">
+    <p > Some error occured. Please contact us.</p>
+</div>
+
+</div>
