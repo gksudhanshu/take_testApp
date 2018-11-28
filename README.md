@@ -26,3 +26,5 @@ Run `gulp build` for building and `gulp serve` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+
+# Note: I have added some predefined user for login in - server/config/seed.js
