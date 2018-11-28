@@ -9,6 +9,7 @@ var TestSchema = new mongoose.Schema({
   Phone: String,
   Starttime: Date,
   QuestionNumber: [],
+  Answers:[{QuestionNo:Number,MarkedAnswer:String}],
   NoOfCorrectAnswer:Number
 
 });

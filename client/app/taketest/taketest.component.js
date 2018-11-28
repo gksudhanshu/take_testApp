@@ -41,9 +41,14 @@ export class TaketestComponent {
       /**
        * update score
        */
+      
+      let ans=$scope.questions.map(qstn=>{
+        return {QuestionNo:qstn.QuestionNo,MarkedAnswer:qstn.userAnswer}
+      })
+      console.log('ans: ',ans)
       $http.put(`/api/tests/${$scope.userEmail}`, {
         correctAnswer: $scope.correctCount,
-        incorrectAns: ($scope.questions.length - $scope.correctCount)
+        Answers: ans
       }).then(res => {
         console.log('Score updated ')
       });
